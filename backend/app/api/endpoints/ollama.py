@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from backend.app.services.ollama_service import chat_with_llama3
+from services.ollama_service import chat_with_llama3
 
 router = APIRouter()
 
