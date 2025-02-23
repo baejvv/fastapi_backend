@@ -1,13 +1,9 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+import uvicorn
+from fastapi import FastAPI, Query
+from backend.app.api.routers import router
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+app = FastAPI(title="종원 테스트서버")
+
+# 라우터 바인딩
+app.include_router(router)
