@@ -13,6 +13,6 @@ port = os.getenv("DB_PORT")
 db = os.getenv("DB_NAME")
 
 DB_URL = f'mysql+pymysql://{user}:{passwd}@{host}:{port}/{db}?charset=utf8'
-
+print(DB_URL)
 engine = create_engine(DB_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
